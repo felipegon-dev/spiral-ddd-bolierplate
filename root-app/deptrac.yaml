@@ -1,0 +1,16 @@
+parameters:
+  paths:
+    - ./app/src
+  layers:
+    - name: Domain
+      collectors:
+        - type: className
+          regex: App\\Domain.*
+    - name: Application
+      collectors:
+        - type: className
+          regex: App\\Application.*
+
+  ruleset:
+    Application:
+      - Domain

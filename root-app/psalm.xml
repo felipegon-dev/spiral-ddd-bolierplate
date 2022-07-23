@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="app/src"/>
+        <ignoreFiles>
+            <directory name="./vendor"/>
+            <directory name="./tests"/>
+            <file name="app/src/Infrastructure/App.php"/>
+            <file name="app/src/Infrastructure/Response/JsonResponse.php" />
+        </ignoreFiles>
+    </projectFiles>
+</psalm>

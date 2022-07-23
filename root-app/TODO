@@ -1,0 +1,62 @@
+
+docker run -it -v $PWD/app:/app spiral-ddd-bolierplate_api:latest /bin/bash
+
+
+quality composer
+
+
+
+<?php
+
+/**
+ * This file is part of Spiral package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
+namespace App\Infrastructure\Controller;
+
+use Psr\Http\Message\ResponseInterface;
+use Spiral\Http\Exception\ClientException\NotFoundException;
+use Spiral\Http\Request\InputManager;
+use Spiral\Prototype\Traits\PrototypeTrait;
+use Spiral\Validation\ValidationInterface;
+
+class HomeController
+{
+    use PrototypeTrait;
+
+    public function __construct(private readonly InputManager $input)
+    {
+    }
+
+    public function index(ValidationInterface $validation): ResponseInterface
+    {
+//        print_r(11);exit;
+//        // https://spiral.dev/docs/security-validation/2.9/en
+//        $validator = $validation->validate(
+//            ['key' => $this->input->data('test')],
+//            ['key' => ['required', 'notEmpty', 'int']],
+//        );
+
+        throw new NotFoundException('hello');
+
+        dump($validator->isValid());
+
+        return $this->response->json('test222', 200);
+    }
+
+    /**
+     * Example of exception page.
+     *
+     * @throws \Error
+     */
+    public function exception(): void
+    {
+        print_r(11);
+        exit;
+    }
+}

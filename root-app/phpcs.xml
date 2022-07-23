@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+  ~ @author Felipe Gonzalez Lopez <felipe.lopez@gear4music.com>
+  ~ @copyright (c) 2022 Gear4music Ltd
+  -->
+
+<ruleset name="PHP_CodeSniffer">
+    <file>./app/src</file>
+    <file>./tests</file>
+
+    <arg name="colors"/>
+    <arg value="sp"/>
+
+    <rule ref="PSR12"/>
+    <rule ref="Squiz.NamingConventions.ValidVariableName">
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
+    </rule>
+</ruleset>
